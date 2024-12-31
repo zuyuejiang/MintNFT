@@ -11,10 +11,11 @@
   "license": "ISC",
   "dependencies": {
     "@openzeppelin/contracts": "^4.8.0",
-    "dotenv": "^16.0.3",
+    "dotenv": "^16.4.7",
     "hardhat": "^2.12.5",
     "ipfs-core": "^0.17.0",
-    "ipfs-http-client": "^59.0.0"
+    "ipfs-http-client": "^59.0.0",
+    "ipfs-utils": "^9.0.14"
   },
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^2.0.0"

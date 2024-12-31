@@ -1,8 +1,11 @@
+require("dotenv").config();
 async function run() {
     const { create } = await import('ipfs-http-client');
-    const ipfs = await create();
+    const ipfs = create();
     
-    // we added three attributes, add as many as you want!
+    // IPFS CID 
+    const imageUrl = `https://ipfs.io/ipfs/${process.env.NFT_CID}`;
+    // three attributes
     const metadata = {
         path: '/',
         content: JSON.stringify({
@@ -21,8 +24,7 @@ async function run() {
                 "value": "1000"
             }
             ],
-            // update the IPFS CID to be your image CID
-            image: "https://ipfs.io/ipfs/QmQ2wnwaFJ1w42UTywTWpM8RgiqrWwKFR6AMrpyiHPgi3p",
+            image: imageUrl,
             description: "So much PLW3!"
         })
     };

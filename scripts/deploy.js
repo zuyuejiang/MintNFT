@@ -1,8 +1,8 @@
+require("dotenv").config();
 async function main() {
-  // if you changed the name of the contract, be sure to update this here!
-  const MyToken = await hre.ethers.getContractFactory("MyToken");
+  const Cinnamonroll = await hre.ethers.getContractFactory("Cinnamonroll");
 
-  const nft = await MyToken.deploy();
+  const nft = await Cinnamonroll.deploy();
 
   await nft.deployed();
 
@@ -11,7 +11,7 @@ async function main() {
   // mint one to yourself!
   const signer0 = await ethers.provider.getSigner(0);
   // update the IPFS CID to be your metadata CID
-  await nft.safeMint(await signer0.getAddress(), "ipfs://QmbCwoJB7g9b86BfEahsjzyzzNx3WEu7Jc1opXWgeTXFgb");
+  await nft.safeMint(await signer0.getAddress(),`ipfs://${process.env.NFT_CID}`);
 
   console.log("NFT Minted!");
 }
